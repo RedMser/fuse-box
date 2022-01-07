@@ -71,6 +71,10 @@ export function createConfig(props: {
   config.uglify = true;
   if (runProps.uglify !== undefined) config.uglify = runProps.uglify;
 
+  // TODO: Carry over more manifest options
+  config.manifest = true;
+  if (runProps.manifest !== undefined) config.manifest = Boolean(runProps.manifest);
+
   if (runProps.cleanCSS !== undefined) config.cleanCSS = runProps.cleanCSS;
   else config.cleanCSS = true;
 

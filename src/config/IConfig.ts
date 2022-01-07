@@ -68,6 +68,7 @@ export interface IConfig {
   json?: IJSONPluginProps;
   link?: IPluginLinkOptions;
   logging?: IFuseLoggerProps;
+  manifest?: boolean;
   modules?: Array<string>;
   output?: IRunProps;
   plugins?: Array<(ctx: Context) => void>;

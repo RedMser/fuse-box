@@ -41,7 +41,7 @@ export const createBuild = async (props: IBuildProps): Promise<IRunResponse> => 
   }
 
   // write the manifest
-  const manifest = await router.writeManifest(bundles);
+  const manifest = ctx.config.manifest ? await router.writeManifest(bundles) : undefined;
 
   if (bundleContext.cache && ctx.config.isDevelopment) await bundleContext.cache.write();
   if (bundleContext.moduleIdCacheWhenCacheDisabled) {
