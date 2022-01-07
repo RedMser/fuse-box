@@ -137,6 +137,9 @@ export function createBundle(props: IBundleProps): Bundle {
               }
             : undefined,
         };
+        if (typeof opts.uglify === 'object') {
+          Object.assign(terserOpts, opts.uglify);
+        }
         ctx.log.info('minify', self.config.absPath);
         const result = await Terser.minify(self.contents, terserOpts);
         self.contents = result.code;
