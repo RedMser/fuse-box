@@ -741,6 +741,14 @@ export const baseGenerator = {
       this[node.value.type](node.value, state);
     }
   },
+  PropertyDefinition(node, state) {
+    this[node.key.type](node.key, state);
+    if (node.value !== null) {
+      state.write(' = ');
+      this[node.value.type](node.value, state);
+    }
+    state.write(';');
+  },
   RegExpLiteral(node, state) {
     const { regex } = node;
     state.write(`/${regex.pattern}/${regex.flags}`, node);
