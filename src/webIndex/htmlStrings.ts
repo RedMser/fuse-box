@@ -1,6 +1,6 @@
 export const htmlStrings = {
   scriptTag: (path: string) => {
-    return `<script type="text/javascript" src="${path}"></script>`;
+    return `<script defer type="text/javascript" src="${path}"></script>`;
   },
   embedScriptTag: (contents: string) => {
     return `<script type="text/javascript">\n${contents}\n</script>`;
